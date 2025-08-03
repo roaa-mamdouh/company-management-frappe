@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-01-01 00:00:00.000000",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "review_period_start",
+  "review_period_end",
+  "reviewer",
+  "workflow_state",
+  "column_break_6",
+  "review_date",
+  "overall_rating",
+  "submitted_for_approval",
+  "section_break_10",
+  "feedback",
+  "goals_achievements",
+  "areas_for_improvement",
+  "development_plan"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "PR-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "CM Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "review_period_start",
+   "fieldtype": "Date",
+   "label": "Review Period Start",
+   "reqd": 1
+  },
+  {
+   "fieldname": "review_period_end",
+   "fieldtype": "Date",
+   "label": "Review Period End",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reviewer",
+   "fieldtype": "Link",
+   "label": "Reviewer",
+   "options": "CM Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Select",
+   "label": "Workflow State",
+   "options": "Pending Review\nReview Scheduled\nFeedback Provided\nUnder Approval\nReview Approved\nReview Rejected",
+   "default": "Pending Review",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "label": "Review Date"
+  },
+  {
+   "fieldname": "overall_rating",
+   "fieldtype": "Select",
+   "label": "Overall Rating",
+   "options": "1 - Poor\n2 - Below Average\n3 - Average\n4 - Good\n5 - Excellent"
+  },
+  {
+   "fieldname": "submitted_for_approval",
+   "fieldtype": "Check",
+   "label": "Submitted for Approval"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Review Details"
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Text",
+   "label": "Feedback"
+  },
+  {
+   "fieldname": "goals_achievements",
+   "fieldtype": "Text",
+   "label": "Goals & Achievements"
+  },
+  {
+   "fieldname": "areas_for_improvement",
+   "fieldtype": "Text",
+   "label": "Areas for Improvement"
+  },
+  {
+   "fieldname": "development_plan",
+   "fieldtype": "Text",
+   "label": "Development Plan"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Company Management",
+ "name": "Performance Review",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

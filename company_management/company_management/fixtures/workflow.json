@@ -1,0 +1,93 @@
+[
+  {
+    "doctype": "Workflow",
+    "name": "Employee Performance Review Cycle",
+    "workflow_name": "Employee Performance Review Cycle",
+    "document_type": "Performance Review",
+    "workflow_state_field": "workflow_state",
+    "is_active": 1,
+    "send_email_alert": 0,
+    "states": [
+      {
+        "state": "Pending Review",
+        "doc_status": "0",
+        "allow_edit": "System Manager",
+        "style": "Warning"
+      },
+      {
+        "state": "Review Scheduled",
+        "doc_status": "0", 
+        "allow_edit": "System Manager",
+        "style": "Info"
+      },
+      {
+        "state": "Feedback Provided",
+        "doc_status": "0",
+        "allow_edit": "System Manager", 
+        "style": "Primary"
+      },
+      {
+        "state": "Under Approval",
+        "doc_status": "0",
+        "allow_edit": "System Manager",
+        "style": "Warning"
+      },
+      {
+        "state": "Review Approved", 
+        "doc_status": "1",
+        "allow_edit": "System Manager",
+        "style": "Success"
+      },
+      {
+        "state": "Review Rejected",
+        "doc_status": "0",
+        "allow_edit": "System Manager",
+        "style": "Danger"
+      }
+    ],
+    "transitions": [
+      {
+        "state": "Pending Review",
+        "action": "Schedule Review",
+        "next_state": "Review Scheduled", 
+        "allowed": "System Manager",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Review Scheduled",
+        "action": "Provide Feedback",
+        "next_state": "Feedback Provided",
+        "allowed": "System Manager", 
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Feedback Provided",
+        "action": "Submit for Approval",
+        "next_state": "Under Approval",
+        "allowed": "System Manager",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Under Approval", 
+        "action": "Approve Review",
+        "next_state": "Review Approved",
+        "allowed": "System Manager",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Under Approval",
+        "action": "Reject Review", 
+        "next_state": "Review Rejected",
+        "allowed": "System Manager",
+        "allow_self_approval": 0
+      },
+      {
+        "state": "Review Rejected",
+        "action": "Update Feedback",
+        "next_state": "Feedback Provided",
+        "allowed": "System Manager",
+        "allow_self_approval": 0
+      }
+    ]
+  }
+]
